@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="width: 90%; text-align: center">
+      <h4>
+        The input take a sentence and return it with "!"a at the end, lower
+        letters and emoji between letters
+      </h4>
+      <form name="my_form" onsubmit="fn(event)">
+        <input type="text" name="phrase_entry" id="the_input" /> <br />
+        <input type="submit" value="submit" />
+      </form>
+    </div>
+    <p id="phrase"></p>
+
+    <script>
+      const txt = document.getElementById("phrase");
+      const input_entry = document.getElementById("the_input");
+      function fn(event) {
+        event.preventDefault();
+        const input = input_entry.value;
+
+        if (input.search(/\s/) !== -1) {
+          let resArray = "";
+          const splitted = input.split(" ");
+          for (let i = 0; i < splitted.length; i++) {
+            const ele = splitted[i];
+            if (i == splitted.length - 1) {
+              resArray += ele;
+              break;
+            }
+            resArray += ele + "😘";
+          }
+          txt.innerHTML = resArray.toUpperCase() + "!";
+          input_entry.value = "";
+        } else {
+          txt.innerHTML = input.toUpperCase() + "!";
+          input_entry.value = "";
+        }
+      }
+      //😘
+      // const input_value = document.forms["my_form"];
+      // input_value.onsubmit = function (event) {
+      //   event.preventDefault();
+      // const the_value = input_value.phrase_entry.value;
+      // const check_space= the_value.indexOf(/\s/g)
+      // if(the_value.indexOf(" ") > 0){
+      //      console.log("entered")
+
+      // }
+      // //const split_value = the_value.split(" ");
+
+      // };
+    </script>
+  </body>
+</html>
+
+<!-- Panic function Write a PANIC! function. The function should take in a
+sentence and return the same sentence in all caps with an exclamation point (!)
+at the end. Use JavaScript's built in string methods. If the string is a phrase
+or sentence, add a 😱 emoji in between each word. Example input: "Hello" Example
+output: "HELLO!" Example input: "I'm almost out of coffee" Example output: "I'M
+😱 ALMOST 😱 OUT 😱 OF 😱 COFFEE!" .split() */ // Test your function
+console.log(panic("I'm almost out of coffee")); console.log(panic("winter is
+coming"))  -->

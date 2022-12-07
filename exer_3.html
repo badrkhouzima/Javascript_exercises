@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    hi
+    <section id="meals"></section>
+
+    <script>
+      const faveFoods = {
+        breakfast: "croissants",
+        lunch: "pasta",
+        supper: "pizaa",
+      };
+      const { breakfast, lunch, supper } = faveFoods;
+
+      const para = document.createElement("p");
+      para.innerHTML = `for breakfast i only, i only like ${breakfast}. For lunch I love ${lunch}.  And for supper i usually want ${supper} `;
+
+      document.getElementById("meals").appendChild(para);
+
+      //   document.getElementById(
+      //     "meals"
+      //   ).innerHTML += `for breakfast i only, i only like ${breakfast}. For lunch I love ${lunch}.  And for supper i usually want ${supper} `;
+
+      //for breakfast i only, i only like croissants. For lunch I love pasta. And for supper i usually want pizaa.
+    </script>
+  </body>
+</html>

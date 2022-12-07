@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <p id="res">My name is badr</p>
+  </head>
+  <body>
+    <h3>My program</h3>
+    <form action="" onsubmit="suma(event)" name="myform">
+      <input type="text" id="num1" name="myinput" />
+      <input type="submit" value="click here" />
+    </form>
+
+  
+
+    <p id="show"></p>
+  </body>
+
+  <script>
+    let pala = document.getElementById("num1");
+
+    let showValue = document.getElementById("showSuma");
+
+   // let mysum;
+
+    function suma(event) {
+       event.preventDefault();
+      let frase = pala.value.toLowerCase();
+
+      if(frase.endsWith("!")){
+        let fraseSinExclamacion = frase.slice(0, frase.length-1)
+        document.getElementById("show").innerHTML = fraseSinExclamacion
+        pala.value ="badr"
+      } else{
+        document.getElementById("show").innerHTML  = frase
+      }
+
+     // let f_Separada = frase.split("");
+      // let buscoExclamaciones = f_Separada.filter((ele) => ele === "!");
+      // if (buscoExclamaciones.length === 0) {
+      //   document.getElementById("show").innerHTML = "Sh...." + frase;
+      // } else {
+      //   let indexEx = f_Separada.indexOf("!")
+      //   f_Separada.splice(indexEx, 1);
+      //   let uni_Array = f_Separada.join("");
+      //   document.getElementById("show").innerHTML = uni_Array;
+      // }
+     
+    }
+  </script>
+</html>
